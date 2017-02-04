@@ -22,7 +22,7 @@ skynet/Makefile :
 	git submodule update --init
 
 skynet : skynet/Makefile
-	cd 3rd/skynet && $(MAKE) $(PLAT)
+	cd 3rd/skynet && $(MAKE) $(PLAT) && cd -
 
 all : \
 	$(foreach v, $(BIN), $(v))
