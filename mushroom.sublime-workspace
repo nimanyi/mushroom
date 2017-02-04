@@ -1,0 +1,1295 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ons",
+				"onsubmit	Attr"
+			],
+			[
+				"for",
+				"forp	for k,v in pairs()"
+			],
+			[
+				"ro",
+				"RoBotIndexs"
+			],
+			[
+				"RoBo",
+				"RoBotImage"
+			],
+			[
+				"Ta",
+				"TalkToCli"
+			],
+			[
+				"Cost",
+				"CostTypeName"
+			],
+			[
+				"GETi",
+				"GetItemEffectStringById"
+			],
+			[
+				"to",
+				"tonumber"
+			],
+			[
+				"Cos",
+				"CostTypeName"
+			],
+			[
+				"Show",
+				"ShowWindowTalked"
+			],
+			[
+				"func",
+				"function	function"
+			],
+			[
+				"TMP",
+				"TMP_Index"
+			],
+			[
+				"zpt",
+				"ztype"
+			],
+			[
+				"zp",
+				"ZpTax"
+			],
+			[
+				"ZP",
+				"ZpTypeName"
+			],
+			[
+				"Up",
+				"UpdateItem"
+			],
+			[
+				"Z",
+				"ZpTypeName"
+			],
+			[
+				"Getpet",
+				"GetPetIndex"
+			],
+			[
+				"item",
+				"itemindex"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"char",
+				"charaindex"
+			],
+			[
+				"Tal",
+				"TalkToCli(_TalkIndex"
+			],
+			[
+				"_m",
+				"_MeIndex"
+			],
+			[
+				"get",
+				"getvip"
+			],
+			[
+				"对象_",
+				"对象_成长级"
+			],
+			[
+				"Race",
+				"RaceBottomInfo"
+			],
+			[
+				"co",
+				"counter"
+			],
+			[
+				"bo",
+				"bottonInfo"
+			],
+			[
+				"_T",
+				"_TalkIndex"
+			],
+			[
+				"Di",
+				"DiceType"
+			],
+			[
+				"Max",
+				"MaxBetValue"
+			],
+			[
+				"SetD",
+				"SetData(_TalkIndex"
+			],
+			[
+				"GetD",
+				"GetData(_TalkIndex"
+			],
+			[
+				"buff",
+				"buffers_to_write"
+			],
+			[
+				"LOG",
+				"LOG_LEVEL_NUM"
+			],
+			[
+				"LOGG",
+				"LOGGER_FNAME_LEN"
+			],
+			[
+				"lo",
+				"logger_fname"
+			],
+			[
+				"requ",
+				"require"
+			],
+			[
+				"rep",
+				"repeat"
+			],
+			[
+				"cli",
+				"client_fd"
+			],
+			[
+				"sync",
+				"sync_sqls"
+			],
+			[
+				"sy",
+				"sync_servers"
+			],
+			[
+				"br",
+				"brance_index"
+			],
+			[
+				"wr",
+				"writecenter_object"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/luaext.lua",
+			"settings":
+			{
+				"buffer_size": 7464,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "function Char_Login_CallBack( charaindex )\n	collectgarbage(\"collect\")\n	--萨村家族成员默认给光环\n	if Char.GetData(charaindex,%对象_光环索引%) == 0 then\n		Char.SetData(charaindex,%对象_光环%,0)\n		Char.SetData(charaindex,%对象_光环索引%,0)\n\n		local info = NLG.GetPointInfo()\n		local allinfo = string.split(info,\"|\")\n		local fm_index \n\n		if allinfo[6] == Char.GetData(charaindex,%对象_家族名%) then\n			fm_index = 1\n		elseif allinfo[15] == Char.GetData(charaindex,%对象_家族名%) then\n			fm_index = 2\n		elseif allinfo[24] == Char.GetData(charaindex,%对象_家族名%) then\n			fm_index = 3\n		elseif allinfo[33] == Char.GetData(charaindex,%对象_家族名%) then\n			fm_index = 4\n		end\n\n		if fm_index and fm_index == 1 then --萨村家族\n			local job = Char.GetData(charaindex,%对象_族职%)\n			if job == %家族_族长% or job == %家族_长老% or job == %家族_一般% then\n				Char.SetData(charaindex,%对象_光环%,110016)\n				Char.SetData(charaindex,%对象_光环索引%,1)\n			end\n		end\n	end\n\n	local svipstate = SVip_GetNoRide(charaindex)\n	Char.SetData(charaindex,%对象_会员状态%,svipstate)\n	Char.SetData(charaindex,%对象_会员骑全%,svipstate)\n\n	local num = Char.GetData(charaindex, %对象_称号数量%)\n	if num <= 0 then\n		Char.SetData(charaindex, %对象_称号数量%, 1)\n	end\n\n	Char.SetData(charaindex, %对象_加族间%, 0)\n\nend\n\nfunction Char_Logout_CallBack( charaindex )\n	\nend\n\nfunction Family_Detail( charaindex )\n	NLG.TalkToCli(charaindex, \"-----------------------------个人账户信息--------------------------\",%黄色%,0,-1)\n\n	NLG.TalkToCli(charaindex,  string.format(\"   声望点数:%-15d金币点数:%-15d活力点数:%-15d\",\n		Char.GetData(charaindex,%对象_声望%)/100,Char.GetData(charaindex,%对象_RMB%),Char.GetData(charaindex,%对象_活力%)), %黄色%,0,-1) \n	\n	NLG.TalkToCli(charaindex,  string.format(\"   经验倍数:%-15d经验提升(％):%-11d会员等级:%-15d\",\n		NLG.GetBattleExp(),Char.GetData(charaindex,%对象_经加成%),Char.GetData(charaindex,%对象_成长级%)), %青色%,0,-1) \n	\n	--NLG.TalkToCli(charaindex,  string.format(\" 官职:%-19s\",job == 0 and \"百姓\" or Palace_Job[job] ), %白色%, 0, -1)\n\n    local num = Char.GetData(charaindex, %对象_称号数量%)\n    for i=1,num do\n        local index = Char.GetData(charaindex, %对象_称号索引1% + i - 1)\n        if index >= 1 then\n            NLG.TalkToCli(charaindex,  string.format(\"   称号:%s(%s)\",Char.GetTitleName(charaindex,index),Char.GetTitleDescript(charaindex,index)), %紫色%,0,-1) \n        end\n    end\n\n    local hole = Char.GetData(charaindex, %对象_光环索引%)\n    if hole > 0 then\n    	NLG.TalkToCli(charaindex, string.format(\"   光环:%s(%s)\",NLG.GetHoleName(charaindex),NLG.GetHoleDes(charaindex)),10,0,-1)\n    end\n\n    local wing = Char.GetData(charaindex, %对象_翅膀索引%)\n    if wing > 0 then\n    	NLG.TalkToCli(charaindex, string.format(\"   翅膀:%s(%s)\",NLG.GetWingName(charaindex),NLG.GetWingDes(charaindex)),10,0,-1)\n    end\n	                                                       \n	NLG.TalkToCli(charaindex, \"------------------------《\"..NLG.GetGmsvName()..\"StoneAge》------------------------\",  %黄色%,0,-1)\nend\n\nlocal function CheckSameDay( t1,t2 )\n    t1 = os.date(\"%d\",t1)\n    t2 = os.date(\"%d\",t2)\n    return t1 == t2\nend\n\n--充值回调\nfunction OnlineCost_CallBack( charaindex, vtype, value )\n	if vtype == 1 then --金币\n		--判断是否是每日首充,额外赠送100%\n		local cdkey = Char.GetData(charaindex,%对象_帐号%)\n		local ret = NLG.DoRedis(string.format(\"get cost:%s\",cdkey))\n		local DayFirstCharge = true\n		if ret and ret ~= \"\" then\n			if CheckSameDay(tonumber(ret),os.time()) then DayFirstCharge = false end\n		end\n\n		if DayFirstCharge then\n			Char.SetData(charaindex,%对象_RMB%,Char.GetData(charaindex,%对象_RMB%) + value)\n			NLG.TalkToCli(charaindex,\"此次为今日首充,额外获得100%金币\",21,0,-1)\n			NLG.DoRedis(string.format(\"set cost:%s %d\",cdkey,os.time()))\n		end\n\n		Char.SetData(charaindex,%对象_成长值%,Char.GetData(charaindex,%对象_成长值%) + value)\n		--判断是否升级\n		local svip = Char.GetData(charaindex,%对象_成长级%)\n		local svalue = Char.GetData(charaindex,%对象_成长值%)\n		while true do\n			if VIP_GROW_EXP[svip+1] and VIP_GROW_EXP[svip+1] <= svalue then\n				svip = svip + 1\n				Char.SetData(charaindex,%对象_成长级%,svip)\n				SVip_Level_Up_CB(charaindex,svip) --升级奖励额外道具\n			else\n				break\n			end\n		end\n\n		--给全家族发礼包,此次充值金额的5%\n		local fmtable = NLG.GetFamilyMemberIndex(charaindex)\n		if fmtable and fmtable ~= \"\" then\n			fmtable = string.trim(fmtable,\"|\")\n			fmtable = string.split(fmtable,\"|\")\n			for _,v in pairs(fmtable) do\n				if v ~= charaindex then\n					Char.SetData(v,%对象_RMB%,Char.GetData(v,%对象_RMB%) + value * 0.05)\n					NLG.TalkToCli(-1,\"家族中的\"..Char.GetData(charaindex,%对象_原名%)..\n						\"》充值成功\"..value..\"点金币,你获得充值金额的5%(\"..(value * 0.05)..\")点金币\",18,0,-1)\n				end\n			end\n		end\n\n		NLG.TalkToCli(-1,\"[通告] 《\"..Char.GetData(charaindex,%对象_原名%)..\n			\"》充值成功\"..value..\"点金币,所在的家族在线人员,获得充值金额的5%(\"..(value * 0.05)..\")点金币\",16,0,-1)\n	end\nend\n\nfunction AddExp_CallBack( addexp )\n	return addexp\nend\n\nfunction Before_Warp_CallBack( charaindex, floor, x, y )\n	return true\nend\n\nfunction SystemLoop_CallBack( chikulatime )\n	-- body\nend\n\nfunction OffLine_CallBack( charindex )\n	-- body\nend\n\nfunction RoBot_CallBack( charindex )\n	return true\nend\n\nfunction EnemyDrop_CallBack( charaindex, drop )\n	return drop\nend\n\nfunction NewTitle_CallBack( charaindex, titleindex )\n	return true\nend\n\n\nfunction CharTalk_CallBack( charaindex, msg )\n	--[[\n	local newmsg = string.split(msg,\" \")\n	--骰子控制\n	if newmsg[1] == \"/dgmc\" and table.size(newmsg) >= 2 then\n		if Char.GetData(charaindex,%对象_帐号%) == \"gm01\" then\n			local name = {\"大\",\"小\",\"通杀\"}\n			DiceGMCrtl = 1\n			local dgmc = tonumber(newmsg[2])\n			if dgmc == 1 then --大\n				DiceGMNumber1 = random.Get(4,6)\n				DiceGMNumber2 = random.Get(4,6)\n			elseif dgmc == 2 then --小\n				DiceGMNumber1 = random.Get(1,3)\n				DiceGMNumber2 = random.Get(1,3)\n			elseif dgmc == 3 then --通杀\n				DiceGMNumber1 = random.Get(1,6)\n				DiceGMNumber2 = 7 - DiceGMNumber1\n			end\n\n			NLG.TalkToCli(charaindex,\"骰子结果已经控制为:\"..name[dgmc],%黄色%,0,-1)\n		end\n		return false\n	elseif newmsg[1] == \"/fix\" then\n		for i=0,24 do\n			local itemindex = Char.GetItemIndex(charaindex,i)\n			if itemindex >= 0 then\n				Item.SetData(itemindex,%道具_耐久%,%道具_MAX耐久%)\n				Item.UpdateItem(itemindex,i)\n			end\n		end\n\n		NLG.TalkToCli(charaindex,\"已经全部修复\",%黄色%,0,-1)\n		return false\n	elseif newmsg[1] == \"/zc\" and table.size(newmsg) >= 2 then\n		local pos = tonumber(newmsg[2]) - 1\n		local petindex = Char.GetPetIndex(charaindex,pos)\n		if petindex >= 0 then\n			Char.SetData(petindex,%对象_魅力%,10000)\n			NLG.UpPet(charaindex,pos)\n			NLG.TalkToCli(charaindex,Char.GetData(petindex,%对象_原名%) .. \" 忠诚度已满\",%黄色%,0,-1)\n		end\n		return false\n	elseif newmsg[1] == \"/ml\" then\n		Char.SetData(charaindex,%对象_魅力%,100)\n		NLG.TalkToCli(charaindex,\"魅力已满\",%黄色%,0,-1)\n		return false\n	end\n	]]\n	return true\nend\n\nfunction CharWindows_CallBack( charaindex, seqno, select, data )\n\nend",
+			"file": "/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/char/char.lua",
+			"file_size": 6984,
+			"file_write_time": 131271928135880000,
+			"settings":
+			{
+				"buffer_size": 6553,
+				"line_ending": "Unix",
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 335.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 514.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/WorkProject/mushroom"
+	],
+	"file_history":
+	[
+		"/D/Users/Administrator/Desktop/新建文件夹/down.php",
+		"/d/Users/Administrator/Desktop/新建文件夹/lib.php",
+		"/d/Users/Administrator/Desktop/新建文件夹/reg.php",
+		"/d/Users/Administrator/Desktop/新建文件夹/regact.php",
+		"/E/WorkProject/cc/trunk/qa/PC/gm_module.py",
+		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/MoWang/MoWangBossRP.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/MoWang/MoWangBossP.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/MoWang/MoWangBossI.lua",
+		"/E/WorkProject/mushroom/game_server/main.lua",
+		"/d/Users/Administrator/Desktop/新建文件夹/index.php",
+		"/d/Users/Administrator/Desktop/新建文件夹/chpas.php",
+		"/d/Users/Administrator/Desktop/新建文件夹/chpasact.php",
+		"/D/Users/Administrator/Desktop/新建文件夹/sendzh.php",
+		"/E/WorkProject/BATServer/tools/luac.sh",
+		"/E/WorkProject/BATServer/restartbattle.sh",
+		"/E/WorkProject/cok/start.sh",
+		"/E/WorkProject/mushroom/LICENSE",
+		"/F/Program Files (x86)/Sublime Text Build 3083 x64/Data/Packages/User/FileHeader.sublime-settings",
+		"/E/WorkProject/cok/3rd/tool/StressTest.c",
+		"/E/WorkProject/cok/tt",
+		"/F/Program Files (x86)/Sublime Text Build 3083 x64/Data/Packages/FileHeader/FileHeader.sublime-settings",
+		"/E/WorkProject/cok/3rd/tool/lua-log.c",
+		"/E/WorkProject/tiger/common/PublicData.h",
+		"/E/WorkProject/tiger/server/src/game/common/protocol/PublicData.h",
+		"/F/BaiduYunDownload/石器9.5/星空石器/login/sqsd.lua",
+		"/F/Program Files (x86)/Sublime Text Build 3083 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/F/Program Files (x86)/Sublime Text Build 3083 x64/Data/Packages/Default/Preferences.sublime-settings",
+		"/E/WorkProject/cok/cok/common/gs.lua",
+		"/E/WorkProject/cok/cok/service/login/serverlist.lua",
+		"/D/Users/Administrator/Desktop/slsq/item/item.lua",
+		"/E/WorkProject/cok/cok/business/focus_range_biz.lua",
+		"/E/WorkProject/cok/cok/common/db.lua",
+		"/D/Users/Administrator/Desktop/cxsq/init.lua",
+		"/d/Users/Administrator/Desktop/cod_arb2_20160919000101.sql/cod_arb2_20160919000101.sql",
+		"/D/Users/Administrator/Desktop/slsq/char/char.lua",
+		"/D/Users/Administrator/Desktop/slsq/escmenu/escmenu.lua",
+		"/D/Users/Administrator/Desktop/cxsq/compose/compose.lua",
+		"/D/Users/Administrator/Desktop/cxsq/VillageCurse/VillageCurse4_3.lua",
+		"/D/Users/Administrator/Desktop/cxsq/VillageCurse/VillageCurse.lua",
+		"/F/BaiduYunDownload/石器9.5/横扫石器9.5/login/sqsd.lua",
+		"/D/Users/Administrator/Desktop/login/sqsd.lua",
+		"/d/Users/Administrator/Desktop/cod_arb2_20160909000101.sql/cod_arb2_20160909000101.sql",
+		"/D/Users/Administrator/Desktop/slsq/mmwarp/mmwarp_init.lua",
+		"/D/Users/Administrator/Desktop/slsq/MoWang/MoWangBoss.lua",
+		"/D/Users/Administrator/Desktop/slsq/mmwarp/mmwarp.lua",
+		"/D/Users/Administrator/Desktop/slsq/init.lua",
+		"/D/Users/Administrator/Desktop/cxsq/item/item.lua",
+		"/d/Users/Administrator/Desktop/com.lua",
+		"/D/Users/Administrator/Desktop/slsq/warp/warp_lj.lua",
+		"/D/Users/Administrator/Desktop/slsq/treasuremap/treasuremapnpc.lua",
+		"/D/Users/Administrator/Desktop/slsq/vip/vip.lua",
+		"/D/Users/Administrator/Desktop/slsq/shop/shopall.lua",
+		"/D/Users/Administrator/Desktop/slsq/shop/shop_init.lua",
+		"/d/Users/Administrator/Desktop/slsq/shop/shopfame.lua",
+		"/D/Users/Administrator/Desktop/slsq/warp/warp_init.lua",
+		"/E/WorkProject/cok/scripts/luaext.lua",
+		"/D/Users/Administrator/Desktop/slsq/shop/shopfame_yiyuan01.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/EquipPlus/EquipPlus.lua",
+		"/D/Users/Administrator/Desktop/saxy/item/item.lua",
+		"/E/WorkProject/cok/cok/service/mysqlcenter.lua",
+		"/E/WorkProject/cok/3rd/skynet/3rd/lua/Makefile",
+		"/D/Users/Administrator/Desktop/cxsq/MoWang/MoWang.lua",
+		"/D/Users/Administrator/Desktop/cxsq/MoWang/MoWangBoss.lua",
+		"/D/Users/Administrator/Desktop/petforecast.lua",
+		"/D/Users/Administrator/Desktop/cxsq/char/char.lua",
+		"/E/WorkProject/BATServer/gamesvr/msgagent.lua",
+		"/D/Users/Administrator/Desktop/cxsq/blessing/blessing.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/skynet/queue.lua",
+		"/D/Users/Administrator/Desktop/slsq/char.lua",
+		"/D/Users/Administrator/Desktop/item/item.lua",
+		"/D/Users/Administrator/Desktop/init.lua",
+		"/D/Users/Administrator/Desktop/RaceHores/RaceHores.lua",
+		"/D/Users/Administrator/Desktop/RaceHores/RaceHores_Manager.lua",
+		"/D/Users/Administrator/Desktop/jjc/jjcpoint.lua",
+		"/D/Users/Administrator/Desktop/familyridefunction.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/LimitedShop/LimitedShop.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpet_shop.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpet.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpetcheck.lua",
+		"/D/Users/Administrator/Desktop/saxy/char/char.lua",
+		"/D/Users/Administrator/Desktop/saxy/shop/shoprmb.lua",
+		"/D/Users/Administrator/Desktop/saxy/shop/shopfame.lua",
+		"/D/Users/Administrator/Desktop/saxy/init.lua",
+		"/D/Users/Administrator/Desktop/slsq/RaceHores/RaceHores.lua",
+		"/D/Users/Administrator/Desktop/slsq/Boson/FunDice.lua",
+		"/D/Users/Administrator/Desktop/slsq/item.lua",
+		"/E/WorkProject/cok/cok/handlers/handler_bag.lua",
+		"/E/WorkProject/cok/cok/common/structobj.lua",
+		"/D/Users/Administrator/Desktop/slsq/RaceHores/RaceHores_Manager.lua",
+		"/D/Users/Administrator/Desktop/maze_copy.lua",
+		"/D/Users/Administrator/Desktop/maze_copy_boss.lua",
+		"/E/WorkProject/cok/3rd/skynet/service-src/service_snlua.c",
+		"/E/WorkProject/cok/3rd/skynet/skynet-src/skynet_timer.c",
+		"/d/Users/Administrator/Desktop/slsq/Boson/FunDice.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/skynet.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/skynet/manager.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/snax.lua",
+		"/E/WorkProject/cok/3rd/skynet/service/snaxd.lua",
+		"/E/WorkProject/cok/3rd/skynet/service/launcher.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib-src/lua-skynet.c",
+		"/E/WorkProject/cok/cok/service/login/launch.lua",
+		"/E/WorkProject/cok/cok/service/cok.lua",
+		"/E/WorkProject/cok/cok/service/serverlog.lua",
+		"/E/WorkProject/cok/cok/handlers/handler_login.lua",
+		"/E/WorkProject/cok/cok/business/usercenter_biz.lua",
+		"/E/WorkProject/cok/cok/service/watchdog.lua",
+		"/E/WorkProject/cok/cok/common/enum.lua",
+		"/E/WorkProject/cok/cok/handlers/mediator_time.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/http/httpc.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/http/sockethelper.lua",
+		"/E/WorkProject/cok/cok/common/util.lua",
+		"/E/WorkProject/cok/3rd/skynet/lualib/socket.lua",
+		"/E/WorkProject/cok/sftp-config.json",
+		"/D/Users/Administrator/Desktop/slsq/RaceHores/RaceHores_init.lua",
+		"/E/WorkProject/cok/cok/service/usercenter.lua",
+		"/E/WorkProject/cok/cok/business/guild_authority_biz.lua",
+		"/E/WorkProject/cok/cok/business/guild_biz.lua",
+		"/d/Users/Administrator/Desktop/slsq/MoWang/MoWang.lua",
+		"/d/Users/Administrator/Desktop/slsq/MoWang/MoWang_init.lua",
+		"/E/WorkProject/cok/3rd/skynet/skynet-src/malloc_hook.c",
+		"/E/WorkProject/cok/3rd/skynet/skynet-src/skynet_mq.c",
+		"/E/WorkProject/BATServer/etc/config.game",
+		"/E/WorkProject/BATServer/luaclib-src/lua-log.c",
+		"/D/Users/Administrator/Desktop/sqsd.lua",
+		"/E/WorkProject/stoneage-svr-source/bin/9.0data/npc/lua/Boson/CasinoManage.lua",
+		"/D/Users/Administrator/Desktop/slsq/MoWang/MoWang_init.lua",
+		"/D/Users/Administrator/Desktop/char.lua",
+		"/d/Users/Administrator/Desktop/slsq/luaext.lua"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"MoWangBossI",
+			"206128696",
+			"94710595",
+			"206128696",
+			"pthread_cond_timedwait",
+			"FBJangListItem",
+			"vip",
+			"Vip",
+			"VIP_GROW_EXP",
+			";",
+			"fromData",
+			"stone",
+			";",
+			"LUA_32BITS",
+			"32BITS",
+			"getIntPart",
+			"update_guide",
+			"CriticalSection",
+			"mail_system",
+			"structobj",
+			"CounterPlayerList",
+			"ShowDig",
+			".counter",
+			"CounterPlayerList",
+			"counter",
+			"SystemLottery",
+			"ShowDig",
+			"BetInfo",
+			"tempstr1",
+			"SystemLottery",
+			"BetJudge",
+			"对象_KN1",
+			"BetJudge",
+			"RbottonInfo",
+			"RaceHoresRank",
+			"dispatch_message",
+			"core",
+			"serverlog",
+			"rollfile",
+			"log.init",
+			"rollfile",
+			"append",
+			"socket",
+			"[Socket Error]",
+			"fflush_unlocked",
+			"player_online",
+			"enum.logType.LOGIN",
+			"[LOGIN]",
+			"request",
+			"REQUEST",
+			"loginToServer",
+			"rollfile",
+			"usercenter",
+			"Out of memory trying to allocate",
+			"MyBet",
+			"token",
+			"CleanBet",
+			"CounterPlayerList",
+			"DEFAULT_BASENAME",
+			"serverID",
+			"file_manager",
+			"TODAY_TIME",
+			"timer_land",
+			"serverlog",
+			"log_table",
+			"logger_fname",
+			"rollfile",
+			"DEFAULT_INTERVAL",
+			"append",
+			"rollfile",
+			"roll_file",
+			"LOG_MAX_OTHER_SIZE",
+			"logger_fname",
+			"logger_other_fname",
+			"logger_level",
+			"logger_fname",
+			"$",
+			"^",
+			"LOG_MESSAGE_SIZE",
+			"flush_interval",
+			"file:write",
+			"write",
+			"open",
+			"log_table",
+			"skynet.error",
+			"file:open",
+			"handle",
+			"recv_package",
+			"unpack_package",
+			"send_request",
+			"session",
+			"name",
+			"send_package",
+			"send_request",
+			"unforward",
+			"dispatch",
+			"request",
+			"unforward",
+			"connection",
+			"branch_index",
+			"sync_sqls",
+			"statistics_mysql",
+			"request",
+			"dbmax",
+			"db_data",
+			"create_mysql_state",
+			"post.save",
+			"tappend",
+			"create_mysql_state",
+			"write_center",
+			"writecenter",
+			"write_center",
+			"logcenter",
+			"on_connect",
+			"db_config",
+			"ecount",
+			"dbs",
+			"dbmax",
+			"write_center",
+			"writecenter",
+			"dbindex",
+			"dbs",
+			"random",
+			"requestClient",
+			"agent_mgr",
+			"luanch",
+			"newAgent",
+			"recycle"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"MoWangBoss",
+			"289349292",
+			"mmwarp",
+			"",
+			"all",
+			"",
+			"\",",
+			"\"",
+			"{\""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "E:\\WorkProject\\mushroom"
+		}
+	],
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/luaext.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7464,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6546,
+								6546
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								224,
+								8,
+								3,
+								16,
+								4,
+								4,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": true,
+									"phpExtraPaths":
+									[
+										"H:/website/framework"
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"function_name_status_row": 297,
+							"incomplete_sync": null,
+							"origPos": 5607.0,
+							"sublime_auto_complete": true,
+							"syncScroll": false,
+							"syntax": "Packages/Lua/Lua.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 6036.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/char/char.lua",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6553,
+						"regions":
+						{
+							"marking_changed":
+							{
+								"flags": 146,
+								"icon": "dot",
+								"regions":
+								[
+									[
+										43,
+										69
+									]
+								],
+								"scope": "comment"
+							}
+						},
+						"selection":
+						[
+							[
+								67,
+								67
+							]
+						],
+						"settings":
+						{
+							"apply_syntax_touched": true,
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								224,
+								8,
+								3,
+								16,
+								4,
+								4,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": true,
+									"phpExtraPaths":
+									[
+										"H:/website/framework"
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"function_name_status_row": -1,
+							"in_converting": true,
+							"incomplete_sync": null,
+							"origPos": 0.0,
+							"origin_encoding": "GB2312",
+							"remote_loading": false,
+							"sublime_auto_complete": true,
+							"syncScroll": false,
+							"synced": false,
+							"syntax": "Packages/Lua/Lua.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 30.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 166.0
+	},
+	"output.sftp":
+	{
+		"height": 126.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"luaext",
+				"scripts\\luaext.lua"
+			],
+			[
+				"mak",
+				"3rd\\skynet\\3rd\\lua\\Makefile"
+			],
+			[
+				"mysql",
+				"cok\\service\\mysqlcenter.lua"
+			],
+			[
+				"qu",
+				"3rd\\skynet\\lualib\\skynet\\queue.lua"
+			],
+			[
+				"structobj",
+				"cok\\common\\structobj.lua"
+			],
+			[
+				"serverlist",
+				"cok\\service\\login\\serverlist.lua"
+			],
+			[
+				"service_snl",
+				"3rd\\skynet\\service-src\\service_snlua.c"
+			],
+			[
+				"skynet_time",
+				"3rd\\skynet\\skynet-src\\skynet_timer.c"
+			],
+			[
+				"skynetmanager",
+				"3rd\\skynet\\lualib\\skynet\\manager.lua"
+			],
+			[
+				"lua-skynet",
+				"3rd\\skynet\\lualib-src\\lua-skynet.c"
+			],
+			[
+				"service_snlua",
+				"3rd\\skynet\\service-src\\service_snlua.c"
+			],
+			[
+				"snaxd",
+				"3rd\\skynet\\service\\snaxd.lua"
+			],
+			[
+				"snax",
+				"3rd\\skynet\\lualib\\snax.lua"
+			],
+			[
+				"luan",
+				"3rd\\skynet\\service\\launcher.lua"
+			],
+			[
+				"launch",
+				"cok\\service\\login\\launch.lua"
+			],
+			[
+				"skynet",
+				"3rd\\skynet\\lualib\\skynet.lua"
+			],
+			[
+				"lua-log",
+				"3rd\\tool\\lua-log.c"
+			],
+			[
+				"cok.",
+				"cok\\service\\cok.lua"
+			],
+			[
+				"login",
+				"cok\\handlers\\handler_login.lua"
+			],
+			[
+				"server",
+				"cok\\service\\serverlog.lua"
+			],
+			[
+				"socket",
+				"3rd\\skynet\\lualib\\socket.lua"
+			],
+			[
+				"httpc",
+				"3rd\\skynet\\lualib\\http\\httpc.lua"
+			],
+			[
+				"usercenter_biz",
+				"cok\\business\\usercenter_biz.lua"
+			],
+			[
+				"watch",
+				"cok\\service\\watchdog.lua"
+			],
+			[
+				"serverlog",
+				"cok\\service\\serverlog.lua"
+			],
+			[
+				"util",
+				"cok\\common\\util.lua"
+			],
+			[
+				"gs",
+				"cok\\common\\gs.lua"
+			],
+			[
+				"cok",
+				"cok\\service\\cok.lua"
+			],
+			[
+				"guild_biz",
+				"cok\\business\\guild_biz.lua"
+			],
+			[
+				"usercent",
+				"cok\\service\\usercenter.lua"
+			],
+			[
+				"skynet_mq",
+				"3rd\\skynet\\skynet-src\\skynet_mq.c"
+			],
+			[
+				"log.c",
+				"3rd\\tool\\lua-log.c"
+			],
+			[
+				"skynet_ti",
+				"3rd\\skynet\\skynet-src\\skynet_timer.c"
+			],
+			[
+				"map_data",
+				"cok\\data\\map_data.lua"
+			],
+			[
+				"resource_biz",
+				"cok\\business\\resource_biz.lua"
+			],
+			[
+				"wath",
+				"cok\\service\\watchdog.lua"
+			],
+			[
+				"log",
+				"cok\\service\\logdata_center.lua"
+			],
+			[
+				"sproto",
+				"3rd\\skynet\\lualib\\sproto.lua"
+			],
+			[
+				"robot",
+				"scripts\\robot_logic.lua"
+			],
+			[
+				"test.lua",
+				"scripts\\test.lua"
+			],
+			[
+				"stress",
+				"3rd\\tool\\StressTest.c"
+			],
+			[
+				"test",
+				"scripts\\test.lua"
+			],
+			[
+				"luac",
+				"3rd\\skynet\\3rd\\lua\\luac.c"
+			],
+			[
+				"socketcha",
+				"3rd\\skynet\\lualib\\socketchannel.lua"
+			],
+			[
+				"gate",
+				"cok\\service\\cok_gate.lua"
+			],
+			[
+				"agent",
+				"cok\\service\\agent.lua"
+			],
+			[
+				"syncm",
+				"cok\\service\\sync_mysql.lua"
+			],
+			[
+				"web",
+				"cok\\guard_server\\guard_web.lua"
+			],
+			[
+				"prel",
+				"cok\\common\\preload.lua"
+			],
+			[
+				"config",
+				"config"
+			],
+			[
+				"write",
+				"cok\\service\\writecenter.lua"
+			],
+			[
+				"watchdog",
+				"cok\\service\\watchdog.lua"
+			],
+			[
+				"agnet",
+				"cok\\service\\agent_mgr.lua"
+			],
+			[
+				"mediator",
+				"cok\\handlers\\mediator.lua"
+			],
+			[
+				"player_data",
+				"cok\\data\\player_data.lua"
+			],
+			[
+				"serverlo",
+				"cok\\service\\serverlog.lua"
+			],
+			[
+				"http",
+				"cok\\service\\httpcenter.lua"
+			],
+			[
+				"webce",
+				"cok\\service\\webcenter.lua"
+			],
+			[
+				"wat",
+				"cok\\service\\watchdog.lua"
+			],
+			[
+				"serverl",
+				"cok\\service\\serverlog.lua"
+			],
+			[
+				"makefile",
+				"Makefile"
+			],
+			[
+				"dao_log",
+				"cok\\dao\\dao_log.lua"
+			],
+			[
+				"proto",
+				"cok\\common\\proto.lua"
+			],
+			[
+				"crypt",
+				"3rd\\skynet\\lualib-src\\lua-crypt.c"
+			],
+			[
+				"agent_mgr",
+				"cok\\service\\agent_mgr.lua"
+			],
+			[
+				"client",
+				"scripts\\client.lua"
+			],
+			[
+				"age",
+				"cok\\service\\agent.lua"
+			],
+			[
+				"usercenter",
+				"cok\\service\\usercenter.lua"
+			],
+			[
+				"rtree",
+				"3rd\\lua-rtree\\rtree.c"
+			],
+			[
+				"globallog",
+				"3rd\\skynet\\examples\\globallog.lua"
+			],
+			[
+				"main_log",
+				"3rd\\skynet\\examples\\main_log.lua"
+			],
+			[
+				"userlo",
+				"3rd\\skynet\\examples\\userlog.lua"
+			],
+			[
+				"userce",
+				"cok\\service\\usercenter.lua"
+			],
+			[
+				"mysqlcenter",
+				"cok\\service\\mysqlcenter.lua"
+			],
+			[
+				"datacenter",
+				"3rd\\skynet\\lualib\\datacenter.lua"
+			],
+			[
+				"cok.lua",
+				"cok\\service\\cok.lua"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
