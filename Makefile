@@ -30,7 +30,7 @@ all : \
 $(LUA_CLIB_PATH) :
 	mkdir $(LUA_CLIB_PATH)
 
-$(LUA_CLIB_PATH)/log.so : common/luaclib-src/lua-log.c | $(LUA_CLIB_PATH)
+$(LUA_CLIB_PATH)/log.so : common/luaclib_src/lua-log.c | $(LUA_CLIB_PATH)
 	$(CC) $(CFLAGS) $(SHARED) -I./3rd/skynet/3rd/lua $^ -o $@
 
 #install
