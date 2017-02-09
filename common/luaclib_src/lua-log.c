@@ -28,10 +28,6 @@
 #define fflush_unlocked fflush
 #endif
 
-#ifdef WIN32
-#include "winport.h"
-#endif
-
 #define ONE_MB	(1024*1024)
 #define DEFAULT_ROLL_SIZE (1024*ONE_MB)		// 日志文件达到1G，滚动一个新文件
 #define DEFAULT_BASENAME "default"
@@ -41,7 +37,7 @@
 #define LOG_MAX 16*1024						// 单条LOG最长16K
 //#define LOG_BUFFER_SIZE 4*1024*1024		// 一个LOG缓冲区4M
 #define LOG_MESSAGE_SIZE 512				// 最大LOG消息数量
-#define LOG_LEVEL_NUM	200	 				// 最多200项LOG
+#define LOG_LEVEL_NUM	200	 			// 最多200项LOG
 #define LOGGER_FNAME_LEN	64				//LOG文件名长度
 
 static char logger_fname[LOG_LEVEL_NUM][LOGGER_FNAME_LEN];
@@ -74,7 +70,8 @@ struct logger
 	int loglevel;
 	int rollsize;
 	char basename[64];
-	char dirname[64];
+	int use_basename[LOG_LEVEL_NUM];
+	char dirname[LOG_LEVEL_NUM][64];
 	size_t written_bytes[LOG_LEVEL_NUM];	// 已写入文件的字节数
 	int roll_hour[LOG_LEVEL_NUM];			// 同struct tm中的tm_hour
 	int flush_interval;		// 异步日志后端写入文件时间间隔
@@ -90,7 +87,7 @@ struct logger
 } inst;
 
 
-char* get_log_filename(const char* basename, int index, int loglevel)
+char* get_log_filename(int use_basename,const char* basename, int index, int loglevel)
 {
 	static char filename[128];			// 只有一个线程访问，不用担心线程安全问题
 	memset(filename, 0, sizeof(filename));
@@ -101,14 +98,14 @@ char* get_log_filename(const char* basename, int index, int loglevel)
 	strftime(timebuf, sizeof(timebuf), "%Y%m%d%H", &tm);
 	if(index == 0)
 	{
-		if(strcmp(basename,DEFAULT_BASENAME) == 0)
+		if(strcmp(basename,DEFAULT_BASENAME) == 0 || use_basename == 0)
 			snprintf(filename, sizeof(filename), "%s.%s.log", logger_fname[loglevel],timebuf);
 		else
 			snprintf(filename, sizeof(filename), "%s.%s.%s.log", basename, logger_fname[loglevel],timebuf);
 	}
 	else
 	{
-		if(strcmp(basename,DEFAULT_BASENAME) == 0)
+		if(strcmp(basename,DEFAULT_BASENAME) == 0 || use_basename == 0)
 			snprintf(filename, sizeof(filename), "%s.%s.%d.log", logger_fname[loglevel],timebuf, index);
 		else
 			snprintf(filename, sizeof(filename), "%s.%s.%s.%d.log", basename, logger_fname[loglevel],timebuf, index);
@@ -148,25 +145,27 @@ void rollfile(int loglevel)
 	char filename[128];
 	// 如果不存在，创建文件夹
 	DIR* dir;
-	dir = opendir(inst.dirname);
+	dir = opendir(inst.dirname[loglevel]);
 	if (dir == NULL)
 	{
 		int saved_errno = errno;
 		if (saved_errno == ENOENT)
 		{
-			if (mkdir(inst.dirname, 0755) == -1)
+			if (mkdir(inst.dirname[loglevel], 0755) == -1)
 			{
 				saved_errno = errno;
-				fprintf(stderr, "mkdir error: %s\n", strerror(saved_errno));
+				fprintf(stderr, "mkdir error: %s,%s\n", strerror(saved_errno),inst.dirname[loglevel]);
 				inst.handle[loglevel] = stdout;
-				// exit(EXIT_FAILURE);
+				//exit(EXIT_FAILURE);
+				return;
 			}
 		}
 		else
 		{
-			fprintf(stderr, "opendir error: %s\n", strerror(saved_errno));
+			fprintf(stderr, "opendir error: %s,%s\n", strerror(saved_errno),inst.dirname[loglevel]);
 			inst.handle[loglevel] = stdout;
-			// exit(EXIT_FAILURE);
+			//exit(EXIT_FAILURE);
+			return;
 		}
 	}
 	else
@@ -175,12 +174,14 @@ void rollfile(int loglevel)
 	int index = 0;
 	while (1)
 	{
-		snprintf(filename, sizeof(filename), "%s/%s", inst.dirname, get_log_filename(inst.basename, index++, loglevel));
+		snprintf(filename, sizeof(filename), "%s/%s", inst.dirname[loglevel], 
+			get_log_filename(inst.use_basename[loglevel],inst.basename, index++, loglevel));
+
 		inst.handle[loglevel] = fopen(filename, "a+");
 		if (inst.handle[loglevel] == NULL)
 		{
 			int saved_errno = errno;
-			fprintf(stderr, "open file error: %s\n", strerror(saved_errno));
+			fprintf(stderr, "open file error: %s,%s\n", strerror(saved_errno),filename);
 			inst.handle[loglevel] = stdout;
 			break;
 		}
@@ -209,9 +210,15 @@ void rollfile(int loglevel)
 	
 }
 
-void append(const char* logline, size_t len, int loglevel)
+void append(const char* logline, size_t len, int loglevel, const char* logdir, int use_basename)
 {
 	pthread_mutex_lock(&inst.mutex);
+	if(inst.dirname[loglevel][0] == 0)
+	{
+		strncpy(inst.dirname[loglevel],logdir,sizeof(inst.dirname[loglevel]));
+		inst.use_basename[loglevel] = use_basename;
+	}
+
 	bool notify = false;
 	int msg_size = inst.curr_buffer->size;
 	if (msg_size + 1 >= LOG_MESSAGE_SIZE)
@@ -271,7 +278,11 @@ void append(const char* logline, size_t len, int loglevel)
 // 日志线程处理函数
 static inline void* worker_func(void* p)
 {
+#if !defined(__APPLE__)
 	struct timespec ts;
+#else
+	struct timeval ts;
+#endif
 	struct buffer_list buffers_to_write;
 	memset(&buffers_to_write, 0, sizeof(buffers_to_write));
 	// 准备两块空闲缓冲区
@@ -289,7 +300,10 @@ static inline void* worker_func(void* p)
 #if !defined(__APPLE__)
 			clock_gettime(CLOCK_REALTIME, &ts);
 #else
-			gettimeofday(&ts, NULL);
+			struct timeval tv;
+			gettimeofday(&tv, NULL);
+			ts.tv_sec = tv.tv_sec;
+			ts.tv_nsec = tv.tv_usec * 1000; //tv.tv_usec  微秒    ts.tv_nsec  纳秒
 #endif
 	    	ts.tv_sec += inst.flush_interval;
 			pthread_cond_timedwait(&inst.cond, &inst.mutex, &ts);
@@ -335,14 +349,19 @@ static inline void* worker_func(void* p)
 
 		if (buffers_to_write.size > 25)
 		{
+			/*
 			char timebuf[64];
-			strftime(timebuf, sizeof(timebuf), "%Y%m%d-%H%M%S", &tm);
+			strftime(timebuf, sizeof(timebuf), "%Y-%m-%d %H:%M:%S", &tm);
 
 			char buf[256];
 			snprintf(buf, sizeof(buf), "Dropped log messages at %s, %d larger buffers\n",
 				timebuf, buffers_to_write.size-2);
 			fprintf(stderr, "%s", buf);
-			append(buf, strlen(buf),0); //写入第一个LOGLEVEL
+
+			pthread_mutex_lock(&inst.mutex); //这里需要lock,上面已经unlock
+			append(buf, strlen(buf),200); //写入前端
+			pthread_mutex_unlock(&inst.mutex);
+			*/
 
 			// 丢掉多余日志，以腾出内存，仅保留两块缓冲区
 			struct buffer* new_tail = buffers_to_write.head->next;
@@ -373,11 +392,7 @@ static inline void* worker_func(void* p)
 				}
 				if (inst.handle[node->message[i].loglevel])
 				{
-#ifdef WIN32
-					fwrite(node->message[i].data, 1, node->message[i].len, inst.handle[node->message[i].loglevel]);
-#else
 					fwrite_unlocked(node->message[i].data, 1, node->message[i].len, inst.handle[node->message[i].loglevel]);
-#endif
 					
 					inst.written_bytes[node->message[i].loglevel] += node->size;
 					need_flush[node->message[i].loglevel] = 1;
@@ -474,13 +489,7 @@ int linit(lua_State *L)
 		inst.roll_hour[i] = -1;
 	}
 
-	const char *dirname = lua_tolstring(L, 4, NULL);
-	if (dirname == NULL)
-		strncpy(inst.dirname, DEFAULT_DIRNAME, sizeof(inst.dirname));
-	else
-		strncpy(inst.dirname, dirname, sizeof(inst.dirname));
-
-	const char *basename = lua_tolstring(L, 5, NULL);
+	const char *basename = lua_tolstring(L, 4, NULL);
 	if (basename == NULL)
 		strncpy(inst.basename, DEFAULT_BASENAME, sizeof(inst.basename));
 	else
@@ -521,8 +530,10 @@ int lwrite(lua_State *L)
 	int loglevel = (int)lua_tointeger(L,1);
 	char* prefix = (char*)lua_tolstring(L, 2, NULL);
 	char* data = (char*)lua_tolstring(L, 3, NULL);
+	char* dir = (char*)lua_tolstring(L, 4, NULL);
+	int basename = (int)lua_toboolean(L, 5);
 
-	if (data == NULL || prefix == NULL)
+	if (data == NULL || prefix == NULL || dir == NULL)
 		return 0;
 	if(inst.loglevel <= loglevel)
 	{
@@ -530,7 +541,7 @@ int lwrite(lua_State *L)
 			strncpy(logger_fname[loglevel],prefix,LOGGER_FNAME_LEN);
 		char msg[LOG_MAX];
 		snprintf(msg, sizeof(msg), "%s\n", data);
-		append(msg, strlen(msg), loglevel);
+		append(msg, strlen(msg), loglevel, dir, basename);
 	}
 
 	return 0;

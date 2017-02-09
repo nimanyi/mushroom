@@ -4,6 +4,62 @@
 		"selected_items":
 		[
 			[
+				"clu",
+				"cluster"
+			],
+			[
+				"snax",
+				"snax_obj"
+			],
+			[
+				"sel",
+				"selfNodeName"
+			],
+			[
+				"monitor",
+				"monitor_publish"
+			],
+			[
+				"Clu",
+				"clusterInfo"
+			],
+			[
+				"cl",
+				"clusterInfo"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"Ti",
+				"TimerId"
+			],
+			[
+				"timer",
+				"timer"
+			],
+			[
+				"ti",
+				"timerid"
+			],
+			[
+				"Time",
+				"TimerSession"
+			],
+			[
+				"Tim",
+				"TimerSession"
+			],
+			[
+				"Timer",
+				"TimerId"
+			],
+			[
+				"runEv",
+				"runEveryHour"
+			],
+			[
 				"ons",
 				"onsubmit\tAttr"
 			],
@@ -78,10 +134,6 @@
 			[
 				"item",
 				"itemindex"
-			],
-			[
-				"re",
-				"return"
 			],
 			[
 				"char",
@@ -184,113 +236,48 @@
 	"buffers":
 	[
 		{
-			"file": "server/game_server/main.lua",
+			"file": "server/db_server/main.lua",
 			"settings":
 			{
-				"buffer_size": 385,
+				"buffer_size": 863,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "etc/game.conf",
+			"file": "etc/start_db.sh",
 			"settings":
 			{
-				"buffer_size": 2160,
+				"buffer_size": 485,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "etc/login.conf",
+			"file": "etc/db.conf",
 			"settings":
 			{
-				"buffer_size": 2114,
+				"buffer_size": 1928,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "server/login_server/main.lua",
+			"file": "etc/center.conf",
 			"settings":
 			{
-				"buffer_size": 302,
+				"buffer_size": 1980,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "common/luaclib_src/lua-log.c",
+			"file": "etc/start_center.sh",
 			"settings":
 			{
-				"buffer_size": 12847,
+				"buffer_size": 537,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 879,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nSublimeGit\n----------\n\n  Welcome to SublimeGit\n  =====================\n  \n  SublimeGit is a full-featured, commercial plugin for integrating\n  git into Sublime Text 2 and 3. To read more about it, or purchase\n  a license, go to https://sublimegit.net.\n  \n  \n  Quickstart\n  ----------\n  Make sure to restart Sublime Text after installing SublimeGit.\n  \n  Run the command \"Git: Status\" to open the status view. This\n  is where you'll spend most of the time when interacting with\n  git through SublimeGit. From here you can stage/unstage files,\n  manage stashes, view diffs, and initiate a commit.\n  \n  Other commands are available in the command palette (cmd+shift+p\n  on OS X, ctrl+shift+p on Windows/Linux). They are all prefixed\n  with \"Git:\" and most of them do exactly what it says on the label.\n  \n  \n  Tutorial\n  --------\n  For the full tutorial, go to:\n  \n      https://docs.sublimegit.net/tutorial.html\n  \n  \n  Trouble Getting Started?\n  ------------------------\n  If you are on windows, or don't usually use git from the command\n  line, there might be some things you'll need to set up. Go here\n  for instructions on how to get set up:\n  \n      https://docs.sublimegit.net/quickstart.html\n  \n  \n  Issues, Questions or Bugs?\n  --------------------------\n  Send a mail to support@sublimegit.net, or report it in the issue\n  tracker:\n  \n      https://github.com/SublimeGit/SublimeGit/issues\n",
-			"settings":
-			{
-				"buffer_size": 1447,
-				"line_ending": "Windows",
-				"name": "Package Control Messages",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"contents": "",
-			"file": "etc/db.conf",
-			"file_size": 0,
-			"file_write_time": 131297124570600000,
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "",
-			"file": "etc/battle.conf",
-			"file_size": 0,
-			"file_write_time": 131297125352350000,
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "",
-			"file": "etc/center.conf",
-			"file_size": 0,
-			"file_write_time": 131297125448040000,
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "etc/monitor.conf",
-			"settings":
-			{
-				"buffer_size": 0,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
 			}
 		}
 	],
@@ -301,10 +288,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "git comm",
+		"height": 196.0,
+		"last_filter": "git push",
 		"selected_items":
 		[
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git commit",
+				"Git: Commit"
+			],
+			[
+				"git",
+				"Git: Push"
+			],
 			[
 				"git comm",
 				"Git: Commit"
@@ -318,15 +317,11 @@
 				"Package Control: Install Package"
 			],
 			[
-				"git",
-				"Git: Push"
-			],
-			[
 				"Package Control: ",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 464.0
+		"width": 416.0
 	},
 	"console":
 	{
@@ -347,29 +342,91 @@
 	"expanded_folders":
 	[
 		"/E/WorkProject/mushroom",
+		"/E/WorkProject/mushroom/3rd",
 		"/E/WorkProject/mushroom/common",
-		"/E/WorkProject/mushroom/common/luaclib",
 		"/E/WorkProject/mushroom/common/luaclib_src",
 		"/E/WorkProject/mushroom/common/lualib",
-		"/E/WorkProject/mushroom/common/luasvr",
+		"/E/WorkProject/mushroom/common/service",
+		"/E/WorkProject/mushroom/etc",
+		"/E/WorkProject/mushroom/server",
+		"/E/WorkProject/mushroom/server/center_server",
+		"/E/WorkProject/mushroom/server/db_server",
+		"/E/WorkProject/mushroom/server/game_server",
 		"/E/WorkProject/mushroom/server/login_server",
-		"/E/WorkProject/mushroom/tool/doc",
-		"/E/WorkProject/mushroom/tool/src"
+		"/E/WorkProject/mushroom/server/monitor_server"
 	],
 	"file_history":
 	[
+		"/E/WorkProject/mushroom/server/center_server/main.lua",
+		"/E/WorkProject/mushroom/common/service/monitor_publish.lua",
+		"/E/WorkProject/mushroom/common/service/rpc.lua",
+		"/E/WorkProject/mushroom/etc/start_center.sh",
+		"/E/WorkProject/mushroom/common/luaclib_src/start.c",
+		"/E/WorkProject/mushroom/etc/center.conf",
+		"/E/WorkProject/mushroom/etc/login.conf",
+		"/E/WorkProject/mushroom/etc/start_login.sh",
+		"/E/WorkProject/mushroom/common/lualib/random.lua",
+		"/E/WorkProject/mushroom/common/lualib/timer.lua",
+		"/E/WorkProject/mushroom/server/login_server/main.lua",
+		"/E/WorkProject/mushroom/server/login_server/logind.lua",
+		"/E/WorkProject/mushroom/etc/start_monitor.sh",
+		"/E/WorkProject/mushroom/etc/monitor.conf",
+		"/E/WorkProject/mushroom/3rd/skynet/lualib/snax/loginserver.lua",
+		"/E/WorkProject/mushroom/server/game_server/gated.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/lualib/snax/msgserver.lua",
+		"/E/WorkProject/BATServer/gamesvr/msgdispatch.lua",
+		"/E/WorkProject/mushroom/common/lualib/preload.lua",
+		"/E/WorkProject/mushroom/common/service/monitor_subscribe.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/service/snaxd.lua",
+		"/E/WorkProject/mushroom/server/monitor_server/main.lua",
+		"/E/WorkProject/mushroom/server/game_server/main.lua",
+		"/E/WorkProject/BATServer/loginsvr/main.lua",
+		"/E/WorkProject/BATServer/loginsvr/snax/loginsvr.lua",
+		"/E/WorkProject/BATServer/loginsvr/logindispatch.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/examples/login/logind.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/lualib/snax.lua",
+		"/F/BaiduYunDownload/石器9.5/原始石器/login/win/init.lua",
+		"/F/BaiduYunDownload/石器9.5/原始石器/login/sqsd.lua",
+		"/E/WorkProject/BATServer/treasure_across_svr/treasure_across.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/lualib/cluster.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/service/clusterd.lua",
+		"/E/WorkProject/mushroom/etc/game.conf",
+		"/E/WorkProject/mushroom/etc/start_game.sh",
+		"/E/WorkProject/mushroom/common/lualib/logdef.lua",
+		"/E/WorkProject/mushroom/common/service/syslog.lua",
+		"/E/WorkProject/mushroom/common/luaclib_src/lua-log.c",
+		"/E/WorkProject/mushroom/server/game_server/agent.lua",
+		"/E/WorkProject/mushroom/common/service/web.lua",
+		"/E/WorkProject/mushroom/etc/clustername.lua",
+		"/E/WorkProject/mushroom/Makefile",
+		"/E/WorkProject/BATServer/etc/config.game",
+		"/E/WorkProject/mushroom/3rd/skynet/lualib/loader.lua",
+		"/E/WorkProject/mushroom/server/game_server/test.lua",
+		"/E/WorkProject/mushroom/common/luasvr/syslog.lua",
+		"/E/WorkProject/BATServer/gamesvr/main.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/examples/login/gated.lua",
+		"/E/WorkProject/BATServer/gamesvr/msgagent.lua",
+		"/E/WorkProject/cok/src/service/watchdog.lua",
+		"/E/WorkProject/cok/src/service/agent.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/examples/login/msgagent.lua",
+		"/E/WorkProject/mushroom/3rd/skynet/service/gate.lua",
+		"/E/WorkProject/cok/src/common/rpc.lua",
+		"/E/WorkProject/mushroom/common/luaclib_src/StressTest.c",
+		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/MoWang/MoWangBoss.lua",
+		"/E/WorkProject/BATServer/lualib/timer.lua",
+		"/E/WorkProject/mushroom/etc/db.conf",
+		"/E/WorkProject/mushroom/etc/battle.conf",
+		"/E/WorkProject/mushroom/.gitmodules",
+		"/E/WorkProject/mushroom/sftp-config.json",
 		"/E/WorkProject/mushroom/.git/config",
 		"/E/WorkProject/mushroom/etc/cache.conf",
 		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/char/char.lua",
 		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/item/item.lua",
 		"/E/WorkProject/mushroom/server/cache_server/main.lua",
-		"/E/WorkProject/mushroom/server/center_server/main.lua",
 		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/EquipPlus/EquipPlus.lua",
 		"/E/WorkProject/stoneage-svr-source/bin/xksa/data/npc/lua/purchase/purchase.lua",
-		"/E/WorkProject/mushroom/server/login_server/main.lua",
 		"/E/WorkProject/mushroom/server/db_server/main.lua",
 		"/E/WorkProject/mushroom/server/battle_server/main.lua",
-		"/E/WorkProject/mushroom/server/monitor_server/main.lua",
 		"/d/Users/Administrator/Desktop/check.c",
 		"/E/WorkProject/mushroom/tool/template.body",
 		"/D/Users/Administrator/Downloads/shiqisobuding55/salua/shiqiso.lua",
@@ -427,69 +484,11 @@
 		"/D/Users/Administrator/Desktop/slsq/treasuremap/treasuremapnpc.lua",
 		"/D/Users/Administrator/Desktop/slsq/vip/vip.lua",
 		"/D/Users/Administrator/Desktop/slsq/shop/shopall.lua",
-		"/D/Users/Administrator/Desktop/slsq/shop/shop_init.lua",
-		"/d/Users/Administrator/Desktop/slsq/shop/shopfame.lua",
-		"/D/Users/Administrator/Desktop/slsq/warp/warp_init.lua",
-		"/E/WorkProject/cok/scripts/luaext.lua",
-		"/D/Users/Administrator/Desktop/slsq/shop/shopfame_yiyuan01.lua",
-		"/D/Users/Administrator/Desktop/saxy/item/item.lua",
-		"/E/WorkProject/cok/cok/service/mysqlcenter.lua",
-		"/E/WorkProject/cok/3rd/skynet/3rd/lua/Makefile",
-		"/D/Users/Administrator/Desktop/cxsq/MoWang/MoWang.lua",
-		"/D/Users/Administrator/Desktop/cxsq/MoWang/MoWangBoss.lua",
-		"/D/Users/Administrator/Desktop/petforecast.lua",
-		"/D/Users/Administrator/Desktop/cxsq/char/char.lua",
-		"/E/WorkProject/BATServer/gamesvr/msgagent.lua",
-		"/D/Users/Administrator/Desktop/cxsq/blessing/blessing.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/skynet/queue.lua",
-		"/D/Users/Administrator/Desktop/slsq/char.lua",
-		"/D/Users/Administrator/Desktop/item/item.lua",
-		"/D/Users/Administrator/Desktop/init.lua",
-		"/D/Users/Administrator/Desktop/RaceHores/RaceHores.lua",
-		"/D/Users/Administrator/Desktop/RaceHores/RaceHores_Manager.lua",
-		"/D/Users/Administrator/Desktop/jjc/jjcpoint.lua",
-		"/D/Users/Administrator/Desktop/familyridefunction.lua",
-		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/LimitedShop/LimitedShop.lua",
-		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpet_shop.lua",
-		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpet.lua",
-		"/E/WorkProject/stoneage-svr-source/bin/hysa9.5/npc/lua/limitpet/limitpetcheck.lua",
-		"/D/Users/Administrator/Desktop/saxy/char/char.lua",
-		"/D/Users/Administrator/Desktop/saxy/shop/shoprmb.lua",
-		"/D/Users/Administrator/Desktop/saxy/shop/shopfame.lua",
-		"/D/Users/Administrator/Desktop/saxy/init.lua",
-		"/D/Users/Administrator/Desktop/slsq/RaceHores/RaceHores.lua",
-		"/D/Users/Administrator/Desktop/slsq/Boson/FunDice.lua",
-		"/D/Users/Administrator/Desktop/slsq/item.lua",
-		"/E/WorkProject/cok/cok/handlers/handler_bag.lua",
-		"/E/WorkProject/cok/cok/common/structobj.lua",
-		"/D/Users/Administrator/Desktop/slsq/RaceHores/RaceHores_Manager.lua",
-		"/D/Users/Administrator/Desktop/maze_copy.lua",
-		"/D/Users/Administrator/Desktop/maze_copy_boss.lua",
-		"/E/WorkProject/cok/3rd/skynet/service-src/service_snlua.c",
-		"/E/WorkProject/cok/3rd/skynet/skynet-src/skynet_timer.c",
-		"/d/Users/Administrator/Desktop/slsq/Boson/FunDice.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/skynet.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/skynet/manager.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/snax.lua",
-		"/E/WorkProject/cok/3rd/skynet/service/snaxd.lua",
-		"/E/WorkProject/cok/3rd/skynet/service/launcher.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib-src/lua-skynet.c",
-		"/E/WorkProject/cok/cok/service/login/launch.lua",
-		"/E/WorkProject/cok/cok/service/cok.lua",
-		"/E/WorkProject/cok/cok/service/serverlog.lua",
-		"/E/WorkProject/cok/cok/handlers/handler_login.lua",
-		"/E/WorkProject/cok/cok/business/usercenter_biz.lua",
-		"/E/WorkProject/cok/cok/service/watchdog.lua",
-		"/E/WorkProject/cok/cok/common/enum.lua",
-		"/E/WorkProject/cok/cok/handlers/mediator_time.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/http/httpc.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/http/sockethelper.lua",
-		"/E/WorkProject/cok/cok/common/util.lua",
-		"/E/WorkProject/cok/3rd/skynet/lualib/socket.lua"
+		"/D/Users/Administrator/Desktop/slsq/shop/shop_init.lua"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 37.0
 	},
 	"find_in_files":
 	{
@@ -504,6 +503,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"CENTER",
+			"LOGIN",
+			"MONITOR",
+			"loginservice",
+			"GetClusterSnax",
+			"cluster",
+			"GAME",
+			"CriticalSection",
+			"requestHandle",
+			"msgserver",
+			"CMD",
+			"cluster",
+			"LUA_PRELOAD",
+			"timer",
+			"util",
 			"MoWangBossI",
 			"206128696",
 			"94710595",
@@ -616,22 +630,7 @@
 			"write_center",
 			"writecenter",
 			"write_center",
-			"logcenter",
-			"on_connect",
-			"db_config",
-			"ecount",
-			"dbs",
-			"dbmax",
-			"write_center",
-			"writecenter",
-			"dbindex",
-			"dbs",
-			"random",
-			"requestClient",
-			"agent_mgr",
-			"luanch",
-			"newAgent",
-			"recycle"
+			"logcenter"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -639,6 +638,12 @@
 		"regex": false,
 		"replace_history":
 		[
+			"DB",
+			"CENTER",
+			"LOGIN",
+			"MONITOR",
+			"WebCmd",
+			"Timer",
 			"MoWangBoss",
 			"289349292",
 			"mmwarp",
@@ -664,24 +669,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "server/game_server/main.lua",
+					"file": "server/db_server/main.lua",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 385,
+						"buffer_size": 863,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								301,
+								301
 							]
 						],
 						"settings":
@@ -691,12 +696,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										302,
+										305
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/dot.png",
+										"brackethighlighter.default"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										255,
+										263
+									]
 								},
 								"unmatched":
 								{
@@ -704,6 +724,41 @@
 							},
 							"bracket_highlighter.regions":
 							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -714,51 +769,16 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
 							],
 							"c_time":
 							[
@@ -788,475 +808,15 @@
 								67,
 								10,
 								7,
-								224,
-								11,
+								225,
+								1,
+								19,
+								15,
 								25,
-								18,
-								21,
-								47,
-								7,
-								254,
-								24,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Lua/Lua.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "etc/game.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2160,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								559,
-								559
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								225,
-								1,
-								24,
 								14,
-								20,
-								24,
-								6,
-								131,
-								248,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"syntax": "Packages/Lua/Lua.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "etc/login.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2114,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								531,
-								531
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								225,
-								1,
-								24,
 								14,
-								20,
-								37,
-								5,
-								220,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"origin_encoding": "UTF-8",
-							"syntax": "Packages/Lua/Lua.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "server/login_server/main.lua",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								124,
-								124
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								224,
-								11,
-								24,
-								18,
-								20,
-								33,
-								7,
-								134,
-								244,
+								175,
+								196,
 								113,
 								1,
 								133,
@@ -1281,20 +841,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "common/luaclib_src/lua-log.c",
+					"buffer": 1,
+					"file": "etc/start_db.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12847,
+						"buffer_size": 485,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								206,
-								206
+								322,
+								322
 							]
 						],
 						"settings":
@@ -1327,31 +887,31 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -1362,11 +922,11 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -1403,13 +963,13 @@
 								7,
 								225,
 								2,
-								4,
-								10,
-								24,
-								29,
-								7,
-								97,
-								17,
+								8,
+								15,
+								33,
+								54,
+								2,
+								189,
+								44,
 								113,
 								1,
 								133,
@@ -1421,288 +981,30 @@
 								46
 							],
 							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 879,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								298,
-								298
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								225,
-								2,
-								4,
-								10,
-								27,
-								1,
-								6,
-								32,
-								193,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"incomplete_sync": null,
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 252.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1447,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1447,
-								1447
-							]
-						],
-						"settings":
-						{
-							"auto_indent": false,
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"bracket_highlighter.regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content"
-							],
-							"incomplete_sync": null,
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_width": 2,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 567.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 2,
 					"file": "etc/db.conf",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1928,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								760,
+								760
 							]
 						],
 						"settings":
@@ -1735,31 +1037,31 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -1770,11 +1072,11 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -1829,116 +1131,25 @@
 								46
 							],
 							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Lua/Lua.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "etc/battle.conf",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"bracket_highlighter.busy": false,
-							"bracket_highlighter.locations":
-							{
-								"close":
-								{
-								},
-								"icon":
-								{
-								},
-								"open":
-								{
-								},
-								"unmatched":
-								{
-								}
-							},
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								225,
-								1,
-								24,
-								14,
-								22,
-								14,
-								9,
-								121,
-								200,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
+					"buffer": 3,
 					"file": "etc/center.conf",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 1980,
 						"regions":
 						{
 						},
@@ -1946,7 +1157,7 @@
 						[
 							[
 								0,
-								0
+								1980
 							]
 						],
 						"settings":
@@ -1967,6 +1178,64 @@
 								{
 								}
 							},
+							"bracket_highlighter.regions":
+							[
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
 							"c_time":
 							[
 								128,
@@ -2015,31 +1284,33 @@
 								46
 							],
 							"incomplete_sync": null,
-							"is_init_dirty_state": false,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "etc/monitor.conf",
+					"buffer": 4,
+					"file": "etc/start_center.sh",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 537,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								184,
+								184
 							]
 						],
 						"settings":
@@ -2049,12 +1320,27 @@
 							{
 								"close":
 								{
+									"1":
+									[
+										183,
+										184
+									]
 								},
 								"icon":
 								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/double_quote.png",
+										"brackethighlighter.default"
+									]
 								},
 								"open":
 								{
+									"1":
+									[
+										176,
+										177
+									]
 								},
 								"unmatched":
 								{
@@ -2072,31 +1358,31 @@
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
 								"bh_default",
 								"bh_default_center",
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -2107,11 +1393,11 @@
 								"bh_curly_open",
 								"bh_curly_close",
 								"bh_curly_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
@@ -2147,14 +1433,14 @@
 								10,
 								7,
 								225,
-								1,
-								24,
+								2,
+								8,
 								14,
-								22,
-								36,
+								50,
+								29,
 								6,
-								85,
-								23,
+								186,
+								167,
 								113,
 								1,
 								133,
@@ -2166,14 +1452,15 @@
 								46
 							],
 							"incomplete_sync": null,
-							"is_init_dirty_state": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/ShellScript/Shell-Unix-Generic.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -2230,7 +1517,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 72.0
+		"height": 68.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2239,6 +1526,166 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"ce",
+				"etc\\center.conf"
+			],
+			[
+				"dbc",
+				"etc\\db.conf"
+			],
+			[
+				"start_cen",
+				"etc\\start_center.sh"
+			],
+			[
+				"rpc",
+				"common\\service\\rpc.lua"
+			],
+			[
+				"moni",
+				"common\\service\\monitor_publish.lua"
+			],
+			[
+				"start.c",
+				"common\\luaclib_src\\start.c"
+			],
+			[
+				"login",
+				"etc\\login.conf"
+			],
+			[
+				"center",
+				"etc\\center.conf"
+			],
+			[
+				"start_login",
+				"etc\\start_login.sh"
+			],
+			[
+				"loginserver",
+				"3rd\\skynet\\lualib\\snax\\loginserver.lua"
+			],
+			[
+				"logind",
+				"server\\login_server\\logind.lua"
+			],
+			[
+				"start_",
+				"etc\\start_monitor.sh"
+			],
+			[
+				"main",
+				"server\\game_server\\main.lua"
+			],
+			[
+				"msgserver",
+				"3rd\\skynet\\lualib\\snax\\msgserver.lua"
+			],
+			[
+				"gate",
+				"server\\game_server\\gated.lua"
+			],
+			[
+				"snax",
+				"3rd\\skynet\\lualib\\snax.lua"
+			],
+			[
+				"cluster",
+				"3rd\\skynet\\lualib\\cluster.lua"
+			],
+			[
+				"mont",
+				"common\\service\\monitor_publish.lua"
+			],
+			[
+				"preload",
+				"common\\lualib\\preload.lua"
+			],
+			[
+				"snaxd",
+				"3rd\\skynet\\service\\snaxd.lua"
+			],
+			[
+				"clusterd",
+				"3rd\\skynet\\service\\clusterd.lua"
+			],
+			[
+				"start_game",
+				"etc\\start_game.sh"
+			],
+			[
+				"game",
+				"etc\\game.conf"
+			],
+			[
+				"monit",
+				"common\\service\\monitor_subscribe.lua"
+			],
+			[
+				"prelo",
+				"common\\lualib\\preload.lua"
+			],
+			[
+				"start_m",
+				"etc\\start_monitor.sh"
+			],
+			[
+				"starg_",
+				"etc\\start_game.sh"
+			],
+			[
+				"start",
+				"common\\luaclib_src\\start.c"
+			],
+			[
+				"preo",
+				"common\\lualib\\preload.lua"
+			],
+			[
+				"lua-log",
+				"common\\luaclib_src\\lua-log.c"
+			],
+			[
+				"syslog",
+				"common\\service\\syslog.lua"
+			],
+			[
+				"logdef",
+				"common\\lualib\\logdef.lua"
+			],
+			[
+				"pre",
+				"common\\lualib\\preload.lua"
+			],
+			[
+				"gated",
+				"3rd\\skynet\\examples\\login\\gated.lua"
+			],
+			[
+				"msg",
+				"3rd\\skynet\\lualib\\snax\\msgserver.lua"
+			],
+			[
+				"clu",
+				"3rd\\skynet\\service\\clusterd.lua"
+			],
+			[
+				"prel",
+				"common\\lualib\\preload.lua"
+			],
+			[
+				"test",
+				"server\\game_server\\test.lua"
+			],
+			[
+				"loader",
+				"3rd\\skynet\\lualib\\loader.lua"
+			],
+			[
+				"make",
+				"Makefile"
+			],
 			[
 				"luaext",
 				"scripts\\luaext.lua"
@@ -2284,14 +1731,6 @@
 				"3rd\\skynet\\service-src\\service_snlua.c"
 			],
 			[
-				"snaxd",
-				"3rd\\skynet\\service\\snaxd.lua"
-			],
-			[
-				"snax",
-				"3rd\\skynet\\lualib\\snax.lua"
-			],
-			[
 				"luan",
 				"3rd\\skynet\\service\\launcher.lua"
 			],
@@ -2304,16 +1743,8 @@
 				"3rd\\skynet\\lualib\\skynet.lua"
 			],
 			[
-				"lua-log",
-				"3rd\\tool\\lua-log.c"
-			],
-			[
 				"cok.",
 				"cok\\service\\cok.lua"
-			],
-			[
-				"login",
-				"cok\\handlers\\handler_login.lua"
 			],
 			[
 				"server",
@@ -2404,20 +1835,12 @@
 				"3rd\\tool\\StressTest.c"
 			],
 			[
-				"test",
-				"scripts\\test.lua"
-			],
-			[
 				"luac",
 				"3rd\\skynet\\3rd\\lua\\luac.c"
 			],
 			[
 				"socketcha",
 				"3rd\\skynet\\lualib\\socketchannel.lua"
-			],
-			[
-				"gate",
-				"cok\\service\\cok_gate.lua"
 			],
 			[
 				"agent",
@@ -2430,10 +1853,6 @@
 			[
 				"web",
 				"cok\\guard_server\\guard_web.lua"
-			],
-			[
-				"prel",
-				"cok\\common\\preload.lua"
 			],
 			[
 				"config",
